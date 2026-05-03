@@ -1,209 +1,207 @@
-# Workshop Pre-flight Setup
+# Pre-Class Setup — Read this BEFORE the workshop
 
-**Read this BEFORE the workshop starts. It takes ~15 minutes.**
+**This is your pre-flight setup. Complete it before the session starts.** Total time: ~20 minutes.
 
-By the end of this guide you will have:
+By the end you will have:
 
-- Claude Code installed on your machine
-- The **Seedance Loop Prompt Builder** skill installed (the one we'll use to write video prompts)
-- The **Frontend Design** skill installed (the official Anthropic UI/design helper)
-- A **KIE.AI** account topped up with $5 of credit to actually render your videos
+- Claude Code installed on your computer
+- The two skills we'll use during the workshop installed
+- A KIE.AI account with $5 of credit (for rendering video)
+- A GitHub account
+- A Vercel account
 
-If anything fails, jump to the **Troubleshooting** section at the bottom — don't get stuck.
+You don't need to read every word — just follow each step in order. If something fails, jump to **Troubleshooting** at the bottom.
 
 ---
 
-## Step 1: Install Claude Code (5 min)
+## Step 1 / Install Claude Code (5 min)
 
-Claude Code is the command-line tool that runs the skills.
+> Important: we're installing **Claude Code** (the command-line tool), not Claude Desktop (the chat app). They're different products. The workshop uses Claude Code.
 
-### On macOS
+### macOS
 
-Open the Terminal app (Cmd+Space → type "Terminal") and paste:
+Open the **Terminal** app (`Cmd+Space` → type "Terminal" → Enter) and paste this line:
 
 ```bash
 npm install -g @anthropic-ai/claude-code
 ```
 
-If you don't have `npm` yet, install Node.js first from <https://nodejs.org> (pick the LTS version), then re-run the command above.
+If you see `npm: command not found`, install **Node.js LTS** from <https://nodejs.org> first, then re-run the command above.
 
-### On Windows
+### Windows
 
-Open PowerShell (Windows key → type "PowerShell") and paste:
+Open **PowerShell** (Windows key → type "PowerShell" → Enter) and paste:
 
 ```powershell
 npm install -g @anthropic-ai/claude-code
 ```
 
-If you don't have `npm`, install Node.js LTS from <https://nodejs.org> first.
+If you don't have `npm`, install **Node.js LTS** from <https://nodejs.org> first.
 
-### Verify it worked
+### First login
 
-In the same terminal, run:
+In the same terminal, type:
+
+```bash
+claude
+```
+
+A browser tab opens asking you to log into your Anthropic account. Complete the login. When you see Claude Code's prompt waiting for input, you're done with Step 1.
+
+### Verify
+
+In a new terminal, run:
 
 ```bash
 claude --version
 ```
 
-You should see a version number print. If you see "command not found," restart your terminal and try again.
-
-### First-time login
-
-Run `claude` in any folder. It will open a browser window asking you to log in with your Anthropic account. Complete the login. You're done with Step 1 when you see Claude Code's prompt waiting for input.
+You should see a version number. Step 1 done.
 
 ---
 
-## Step 2: Install the Seedance Loop Prompt Builder skill (3 min)
+## Step 2 / Install the two workshop skills (3 min)
 
-This is the custom skill we built that turns your video ideas into cinema-grade Seedance prompts.
+We'll use two skills during the session:
 
-### One command — pulls directly from GitHub
+- **Seedance Loop Prompt Builder** — turns video ideas into cinema-grade Seedance 2 prompts
+- **Frontend Design** — Anthropic's official skill for building production-grade UI
 
-#### On macOS / Linux
+Install both with **one paste** in your terminal.
 
-Open Terminal and paste:
-
-```bash
-mkdir -p ~/.claude/skills/seedance-loop-prompt && curl -L -o ~/.claude/skills/seedance-loop-prompt/SKILL.md https://raw.githubusercontent.com/danielpaulai/website-design/main/.claude/seedance-loop-prompt/SKILL.md
-```
-
-#### On Windows (PowerShell)
-
-```powershell
-New-Item -ItemType Directory -Force -Path "$HOME\.claude\skills\seedance-loop-prompt"; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/danielpaulai/website-design/main/.claude/seedance-loop-prompt/SKILL.md" -OutFile "$HOME\.claude\skills\seedance-loop-prompt\SKILL.md"
-```
-
-That's the whole install — no download, no move, no manual steps.
-
-### 2c. Verify
-
-Restart Claude Code (close it, run `claude` again) and type:
-
-```
-Show me what skills you have available.
-```
-
-You should see `seedance-loop-prompt` in the list. If you do — Step 2 done.
-
----
-
-## Step 3: Install the Frontend Design skill (2 min)
-
-This is Anthropic's official skill for building production-grade UI. We'll use it later in the workshop for the website pieces around the video.
-
-### Option A: Use the /plugin command (try this first)
-
-Inside Claude Code, type:
-
-```
-/plugin marketplace add anthropics/claude-plugins-official
-/plugin install frontend-design@claude-plugins-official
-```
-
-If both commands work — done.
-
-If you see **`/plugin isn't available in this environment`**, use Option B below.
-
-### Option B: Manual install (always works)
-
-Open a regular terminal (not inside Claude Code) and paste:
-
-#### macOS / Linux
+### macOS / Linux
 
 ```bash
-mkdir -p ~/.claude/skills/frontend-design
-curl -L -o ~/.claude/skills/frontend-design/SKILL.md \
-  https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/plugins/frontend-design/skills/frontend-design/SKILL.md
+mkdir -p ~/.claude/skills/seedance-loop-prompt ~/.claude/skills/frontend-design && \
+curl -L -o ~/.claude/skills/seedance-loop-prompt/SKILL.md https://raw.githubusercontent.com/danielpaulai/website-design/main/.claude/seedance-loop-prompt/SKILL.md && \
+curl -L -o ~/.claude/skills/frontend-design/SKILL.md https://raw.githubusercontent.com/danielpaulai/website-design/main/.claude/frontend-design/SKILL.md
 ```
 
-#### Windows (PowerShell)
+### Windows (PowerShell)
 
 ```powershell
-New-Item -ItemType Directory -Force -Path "$HOME\.claude\skills\frontend-design"
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/anthropics/claude-plugins-official/main/plugins/frontend-design/skills/frontend-design/SKILL.md" -OutFile "$HOME\.claude\skills\frontend-design\SKILL.md"
+New-Item -ItemType Directory -Force -Path "$HOME\.claude\skills\seedance-loop-prompt"; `
+New-Item -ItemType Directory -Force -Path "$HOME\.claude\skills\frontend-design"; `
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/danielpaulai/website-design/main/.claude/seedance-loop-prompt/SKILL.md" -OutFile "$HOME\.claude\skills\seedance-loop-prompt\SKILL.md"; `
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/danielpaulai/website-design/main/.claude/frontend-design/SKILL.md" -OutFile "$HOME\.claude\skills\frontend-design\SKILL.md"
 ```
 
 ### Verify
 
-Restart Claude Code. Ask:
+Close Claude Code completely (`Cmd+Q` on Mac, fully exit on Windows), reopen it with `claude`, then ask:
 
 ```
 List your installed skills.
 ```
 
-You should now see both `seedance-loop-prompt` and `frontend-design`.
+You should see **both** `seedance-loop-prompt` and `frontend-design` in the response. Step 2 done.
 
 ---
 
-## Step 4: Create a KIE.AI account and top up $5 (5 min)
+## Step 3 / Create a KIE.AI account and top up $5 (5 min)
 
-KIE.AI is the service we'll use to actually render the prompts into video.
+KIE.AI is the service we'll use to render the video prompts you write during the session.
 
 1. Go to <https://kie.ai>
-2. Click **Sign Up** and create an account (email or Google login both work)
-3. Once logged in, find the **Billing** or **Credits** section
-4. Top up **$5 USD** — this covers many test renders during the workshop
-5. Find the **API Key** or **Dashboard** section and keep that tab open — you'll paste prompts here during the workshop
+2. Click **Sign Up** — email or Google login both work
+3. Once logged in, find the **Billing** or **Credits** section in the dashboard
+4. Top up **$5 USD** (a 10-second 1080p Seedance render costs a small fraction of a dollar — $5 covers many test renders)
+5. Keep the dashboard tab open — you'll paste prompts here during the session
 
-A 10-second 1080p Seedance render typically costs a small fraction of $1, so $5 is plenty for the session.
+Step 3 done when you can see at least $5 of credit on your account dashboard.
+
+---
+
+## Step 4 / Create a GitHub account (3 min)
+
+We'll use GitHub during the session to store your project. **You only need to sign up — don't create a repository yet.** We'll do that together.
+
+1. Go to <https://github.com>
+2. Click **Sign up** (top right)
+3. Use your real email — you'll need to verify it
+4. Pick a username you're happy with (it'll appear in your project URLs)
+5. Verify your email when GitHub sends the link
+
+Step 4 done when you can log in to <https://github.com> and see your dashboard.
+
+---
+
+## Step 5 / Create a Vercel account (3 min)
+
+Vercel is the service we'll use to deploy the website you build. Same idea — **just sign up, don't create a project yet**. We'll deploy together in the session.
+
+1. Go to <https://vercel.com>
+2. Click **Sign Up**
+3. Choose **Continue with GitHub** — this links your accounts now and saves a step in the session
+4. Authorize Vercel to access your GitHub when prompted
+5. You'll land on the Vercel dashboard
+
+Step 5 done when you can see the Vercel dashboard logged in.
 
 ---
 
 ## Verify everything is ready
 
-Tick these off before the workshop starts:
+Tick all of these before the session starts:
 
-- [ ] `claude --version` prints a version number
+- [ ] `claude --version` prints a version number in your terminal
 - [ ] Running `claude` opens Claude Code and you can type to it
-- [ ] Asking Claude "list your skills" shows **both** `seedance-loop-prompt` and `frontend-design`
-- [ ] You can log into <https://kie.ai> and see at least $5 of credit on your account
-- [ ] You have a working internet connection (we'll be hitting both Claude and KIE.AI during the session)
+- [ ] Asking Claude "list your installed skills" shows **both** `seedance-loop-prompt` and `frontend-design`
+- [ ] You can log into <https://kie.ai> and see at least **$5** of credit
+- [ ] You can log into <https://github.com> and see your dashboard
+- [ ] You can log into <https://vercel.com> and see your dashboard
+- [ ] You have a working internet connection
 
-If all five are checked — you're ready. See you tomorrow.
+When all seven boxes are checked — you're ready. See you in the session.
 
 ---
 
 ## Troubleshooting
 
-### "npm: command not found"
+### `npm: command not found`
 
-You don't have Node.js installed. Get the LTS version from <https://nodejs.org>, then close and reopen your terminal.
+You don't have Node.js installed. Get the **LTS** version from <https://nodejs.org>, then close and reopen your terminal before re-running the install command.
 
-### "claude: command not found" (after install)
+### `claude: command not found` (after installing)
 
 Close the terminal completely and open a new one. If still failing on macOS, run:
 
 ```bash
-echo 'export PATH="$PATH:$(npm prefix -g)/bin"' >> ~/.zshrc
-source ~/.zshrc
+echo 'export PATH="$PATH:$(npm prefix -g)/bin"' >> ~/.zshrc && source ~/.zshrc
 ```
 
-### "/plugin isn't available in this environment"
+Then retry `claude --version`.
 
-Use the manual install in Step 3 Option B. Both skills work the same way once they're in `~/.claude/skills/`.
+### Skills don't appear after Step 2
 
-### Skills don't show up after install
+Close Claude Code fully (`Cmd+Q` on Mac, fully exit on Windows), then reopen with `claude`. Skills load at startup — if you didn't restart, they won't show up.
 
-Make sure you fully closed Claude Code (Cmd+Q on Mac, fully exit on Windows) and re-opened it. Skills are loaded at startup.
+### KIE.AI top-up fails
 
-### KIE.AI top-up doesn't go through
+Try a different payment method. If still failing, message the instructor — we have a backup video service we can switch to during the session.
 
-Try a different payment method. If still failing, use a backup video service — your instructor will share alternatives during the workshop.
+### GitHub asks for SMS / phone verification
 
-### Still stuck?
+Use your real phone number — GitHub uses it for security only. They won't spam you.
 
-Message your instructor before the session — don't show up unable to install, we'll lose time fixing setup instead of building.
+### Vercel "Continue with GitHub" doesn't work
+
+Sign up with email instead. We can link the GitHub account later in the session. It just costs an extra minute.
+
+### Still stuck
+
+Message the instructor before the session starts — don't show up unable to install, we'll lose group time fixing setup instead of building.
 
 ---
 
-## What you'll do tomorrow
+## What you'll do in the session
 
-With this stack in place, the workshop flow is:
+With this stack ready:
 
-1. You describe a product, scene, or concept to Claude Code
-2. The Seedance skill turns it into a cinema-grade prompt
-3. You paste the prompt into KIE.AI
-4. KIE.AI renders the video
-5. We use the Frontend Design skill to build the website around it
+1. You'll describe a website concept and an architecture firm to Claude Code
+2. The Seedance skill will turn your video idea into a cinema-grade prompt
+3. You'll paste the prompt into KIE.AI to render the video
+4. The Frontend Design skill will help you build the website around that video
+5. We'll push it to GitHub and deploy it on Vercel — all in one session
 
 See you in the room.

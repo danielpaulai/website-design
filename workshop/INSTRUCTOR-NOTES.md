@@ -1,78 +1,77 @@
-# Instructor Notes — Distribution & Pre-Workshop Checklist
+# Instructor Notes — Pre-Workshop Checklist & Distribution
 
-These notes are **for Daniel only**, not for students. They cover how to actually get the materials into students' hands before tomorrow.
-
----
-
-## What students need
-
-1. The student-facing handout: [INSTALL-GUIDE.md](INSTALL-GUIDE.md)
-2. The Seedance Loop Prompt Builder file: `../.claude/seedance-loop-prompt/SKILL.md`
-
-That's it. Two files.
+For Daniel only. Not for students.
 
 ---
 
-## Distributing the SKILL.md file — pick ONE method
+## Distribution decision (made)
 
-### Option 1: Google Drive (easiest, ~2 min)
+The Seedance and Frontend Design skills are now distributed directly from the GitHub repo at `github.com/danielpaulai/website-design`. Students install both with one paste in their terminal — see Step 2 of [INSTALL-GUIDE.md](INSTALL-GUIDE.md).
 
-1. Open <https://drive.google.com>
-2. Upload `/Users/danielpaul/Documents/Website design/.claude/seedance-loop-prompt/SKILL.md`
-3. Right-click the file → **Share** → **Anyone with the link can view**
-4. Copy the link
-5. Paste the link into INSTALL-GUIDE.md Step 2a (replace "Your instructor will share the file via one of these:" with the Google Drive URL directly)
-6. Send INSTALL-GUIDE.md to students
+This means the only thing you need to share with attendees is the **INSTALL-GUIDE.md** itself (or a link to a published version of it — Notion, Google Doc, Vercel page, whatever you prefer).
 
-### Option 2: GitHub Gist (cleanest, ~3 min)
+The repo URL itself is not promoted in the install guide. Students get the curl commands, but not a "browse the repo" link or a tour of the workshop materials. Reveal the repo during the session.
 
-1. Open <https://gist.github.com>
-2. Filename: `SKILL.md`
-3. Paste the contents of `/Users/danielpaul/Documents/Website design/.claude/seedance-loop-prompt/SKILL.md`
-4. Click **Create public gist**
-5. Click **Raw** to get the raw URL
-6. Replace Step 2a in INSTALL-GUIDE.md with this curl command:
+---
 
-   ```bash
-   mkdir -p ~/.claude/skills/seedance-loop-prompt
-   curl -L -o ~/.claude/skills/seedance-loop-prompt/SKILL.md "PASTE_RAW_GIST_URL_HERE"
-   ```
+## Hosting the install guide for attendees
 
-   This makes Step 2 a single command — much cleaner for the workshop.
+You have a few options for distributing INSTALL-GUIDE.md to attendees as a "pre-class activity document":
 
-### Option 3: Slack / email attachment (lowest tech)
+### Option A — Notion (easiest, most familiar)
 
-Just attach the SKILL.md file to whatever channel you use to talk to attendees. They drop it into Downloads and follow Step 2b in the guide as written.
+1. Open Notion → New page → import the markdown from `workshop/INSTALL-GUIDE.md`
+2. Click **Share** → **Share to web** → **Allow editing: off**
+3. Copy the link and send it to attendees
 
-### Option 4: GitHub repo (best for repeat workshops)
+### Option B — Google Docs
 
-Create a public repo at e.g. `github.com/danielpaul/seedance-skill`, commit the SKILL.md, and the install becomes a permanent one-liner. Worth doing if you'll teach this workshop again.
+1. Create a new Google Doc titled "Pre-Class Setup"
+2. Paste the markdown contents (Google Docs auto-formats reasonably well — clean up code blocks manually if needed)
+3. **Share** → **Anyone with the link can view**
+4. Copy and send
+
+### Option C — Vercel preview page (most polished, slight extra effort)
+
+If you want it to feel like a workshop landing page:
+
+1. Use the Frontend Design skill in Claude Code to generate a single-page Next.js site that just renders the install guide
+2. Deploy to Vercel — instant URL like `pre-class.aurabuild.workshop.app`
+3. Send that URL
+
+This option doubles as a teaser of what they're about to build.
+
+### Option D — Direct file (lowest tech)
+
+Email or Slack the `INSTALL-GUIDE.md` file as an attachment. Works, but markdown rendering depends on whatever app the attendee opens it with.
 
 ---
 
 ## Pre-workshop checklist (do tonight)
 
-- [ ] Pick a distribution method above and share the SKILL.md
-- [ ] Update INSTALL-GUIDE.md Step 2a with the actual link/command
-- [ ] Send INSTALL-GUIDE.md to attendees at least 2 hours before the session
-- [ ] Confirm your own KIE.AI account has credit (you'll need to demo)
-- [ ] Test the install yourself in a fresh terminal to catch broken steps
-- [ ] Have a backup video service ready if KIE.AI has an outage tomorrow (Higgsfield, Runway, Kling all work)
+- [ ] Pick a distribution method above and publish the INSTALL-GUIDE.md
+- [ ] Send the link to attendees at least 2 hours before the session
+- [ ] Run the install steps yourself in a fresh terminal — catches any broken steps caused by repo updates
+- [ ] Confirm your own KIE.AI account has sufficient credit (you'll need to demo)
+- [ ] Confirm your Vercel + GitHub accounts are linked (saves a minute during the deploy demo)
+- [ ] Have a backup video service URL ready in case KIE.AI has an outage tomorrow (Higgsfield, Runway, Kling all work)
+- [ ] Pull up your own `github.com/danielpaulai/website-design` repo in a browser tab so you can show it during the session
 
 ---
 
 ## During the workshop
 
-- Open the session by having everyone run **Verify** checklist on page 4 of the guide — anyone who fails the checklist gets help in the first 10 minutes, not 40 minutes in
-- Have a screenshare of YOUR working terminal so attendees can match what they see
-- The two most common failures based on past Claude Code installs:
-  1. `npm not found` → push them to install Node.js LTS
-  2. `claude not found after install` → terminal restart fixes it 90% of the time
+- Open the session by having everyone hit the **Verify** checklist on page 4 of the install guide. Anyone who fails the checklist gets help in the first 10 minutes, not 40 minutes in.
+- Have a screenshare of YOUR working terminal so attendees can match what they see.
+- The two most common install failures from past Claude Code workshops:
+  1. `npm: command not found` → push them to install Node.js LTS
+  2. `claude: command not found` after install → terminal restart fixes it 90% of the time
+- The "skills don't show up" failure is almost always because they didn't quit Claude Code fully before reopening it. Show them how to fully quit (Cmd+Q on Mac).
 
 ---
 
 ## After the workshop
 
 - Save attendees' actual generated prompts and rendered videos as case studies
-- Note which steps caused friction for the most people — fold fixes back into INSTALL-GUIDE.md before the next workshop
-- If most attendees succeeded, consider publishing the SKILL.md as a public GitHub repo so future students can install in one line
+- Note which steps caused friction for the most people — fold fixes back into INSTALL-GUIDE.md for the next workshop
+- If the workshop went well, consider publishing the INSTALL-GUIDE.md publicly as a "How to install Claude Code skills" tutorial — it's a useful primer beyond this specific workshop
