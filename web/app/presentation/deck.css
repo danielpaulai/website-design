@@ -1,0 +1,722 @@
+/* ============================================================
+   Aura Build — Workshop Deck
+   Design system: ink black canvas, bone white type,
+   brushed brass accent, Fraunces display, Manrope body
+   ============================================================ */
+
+.deck-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  background: var(--color-canvas);
+  color: var(--color-bone);
+  font-family: var(--font-body);
+}
+
+.deck-container::-webkit-scrollbar { display: none; }
+.deck-container { -ms-overflow-style: none; scrollbar-width: none; }
+
+.slide {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: clamp(2rem, 5vw, 5rem) clamp(2rem, 6vw, 6rem);
+  overflow: hidden;
+}
+
+.slide-bare {
+  padding: 0;
+}
+
+/* ---------- Layout grids ---------- */
+
+.slide-grid {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.slide-grid.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  height: 100%;
+  max-width: 1600px;
+}
+
+.slide-grid.two-col-equal {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 5rem;
+  align-items: center;
+  height: 70%;
+}
+
+.slide-grid.centered {
+  align-items: center;
+  text-align: center;
+  max-width: 1100px;
+  gap: 2rem;
+}
+
+.slide-grid.bottom-left {
+  align-self: flex-end;
+  margin-right: auto;
+  max-width: 900px;
+  gap: 1rem;
+}
+
+.slide-grid.stacked {
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.col-image {
+  position: relative;
+  height: 80vh;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.full-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vertical-rule {
+  width: 1px;
+  height: 100%;
+  background: color-mix(in srgb, var(--color-bone) 18%, transparent);
+}
+
+/* ---------- Background images / videos / scrim ---------- */
+
+.slide-image-bg .slide-bg,
+.slide-image-bg .slide-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.slide-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.slide-bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 15, 17, 0.55) 0%,
+    rgba(14, 15, 17, 0.7) 60%,
+    rgba(14, 15, 17, 0.92) 100%
+  );
+  z-index: 1;
+}
+
+.slide-bg-scrim-bottom {
+  background: linear-gradient(
+    180deg,
+    rgba(14, 15, 17, 0.1) 0%,
+    rgba(14, 15, 17, 0.4) 60%,
+    rgba(14, 15, 17, 0.92) 100%
+  );
+}
+
+/* ---------- Typography ---------- */
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-bone) 55%, transparent);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--color-bone);
+  margin: 0;
+}
+
+.display-xl { font-size: clamp(3.5rem, 8vw, 7rem); }
+.display-lg { font-size: clamp(2.75rem, 6vw, 5rem); }
+.display-md { font-size: clamp(2rem, 4.5vw, 3.5rem); }
+
+.display.italic { font-style: italic; }
+.display.tight { letter-spacing: 0.4em; font-size: clamp(2.5rem, 6vw, 4.5rem); }
+
+.display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  color: color-mix(in srgb, var(--color-bone) 78%, transparent);
+}
+
+.balanced { text-wrap: balance; }
+
+.lede {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--color-bone) 70%, transparent);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.caption {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--color-bone) 60%, transparent);
+  max-width: 36ch;
+  margin: 0;
+}
+
+.attribution {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-bone) 50%, transparent);
+}
+
+.brass { color: var(--color-brass); }
+.muted { color: color-mix(in srgb, var(--color-bone) 35%, transparent); }
+.serif { font-family: var(--font-display); }
+.italic { font-style: italic; }
+.mono { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; }
+.line-through { text-decoration: line-through; opacity: 0.5; }
+
+/* ---------- Hairline rules ---------- */
+
+.hairline {
+  display: block;
+  height: 1px;
+  width: 80px;
+  background: var(--color-brass);
+  margin-top: 1.5rem;
+}
+
+.hairline-center {
+  display: block;
+  height: 1px;
+  width: 240px;
+  background: var(--color-brass);
+  margin: 0.5rem auto;
+}
+
+/* ---------- Slide 03 — Quote ---------- */
+
+.quote {
+  border-left: 1px solid var(--color-glass, #4A6B8A);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 0;
+  max-width: 60ch;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quote p {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--color-bone) 88%, transparent);
+  margin: 0;
+}
+
+.quote .num {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-brass);
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Slide 06 — Big numbers ---------- */
+
+.big-number {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(5rem, 11vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.big-number.brass { color: var(--color-brass); }
+
+/* ---------- Slide 07 — Step flow ---------- */
+
+.step-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.step-card {
+  border: 1px solid color-mix(in srgb, var(--color-bone) 12%, transparent);
+  padding: 1.75rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.step-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--color-brass);
+}
+
+.step-n {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--color-brass);
+}
+
+.step-stage {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.4rem;
+  margin: 0.25rem 0 0;
+  color: var(--color-bone);
+}
+
+.step-tool {
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--color-bone) 65%, transparent);
+  margin: 0;
+}
+
+.step-time {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-bone) 50%, transparent);
+  margin: 0.5rem 0 0;
+}
+
+/* ---------- Slide 08 — Watermark ---------- */
+
+.slide-watermark {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-bone) 55%, transparent);
+  z-index: 2;
+}
+
+/* ---------- Slide 09 — Before / After ---------- */
+
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr auto 1.5fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.ba-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ba-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+}
+
+.ba-vague {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--color-bone) 70%, transparent);
+  margin: 0;
+}
+
+.ba-rich {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--color-bone);
+  background: color-mix(in srgb, var(--color-bone) 4%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-bone) 10%, transparent);
+  padding: 1.25rem;
+  margin: 0;
+}
+
+.ba-rich .mono { color: var(--color-brass); }
+
+.ba-arrow {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-brass);
+  align-self: center;
+}
+
+/* ---------- Slide 10 — Stat ---------- */
+
+.huge-stat {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(7rem, 16vw, 14rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.dot-row {
+  display: flex;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.dot-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.dot-stat-n {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.75rem;
+  color: var(--color-bone);
+}
+
+.dot-stat-l {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-bone) 55%, transparent);
+}
+
+/* ---------- Slide 11 — Section list ---------- */
+
+.col-list { gap: 0.75rem; }
+
+.section-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.section-row {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-bone) 10%, transparent);
+}
+
+.section-row:last-child {
+  border-bottom: 0;
+}
+
+.section-n {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+}
+
+.section-label {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: var(--color-bone);
+}
+
+/* ---------- Slide 12 — Commands ---------- */
+
+.cmd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.cmd-row {
+  display: grid;
+  grid-template-columns: 50px 320px 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-bone) 10%, transparent);
+}
+
+.cmd-n {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--color-brass);
+}
+
+.cmd {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 1rem;
+  background: color-mix(in srgb, var(--color-bone) 6%, transparent);
+  padding: 0.5rem 0.85rem;
+  border-radius: 3px;
+  color: var(--color-bone);
+}
+
+.cmd-cap {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--color-bone) 60%, transparent);
+}
+
+/* ---------- Slide 13 — Identity ---------- */
+
+.brass-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.brass-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: color-mix(in srgb, var(--color-bone) 80%, transparent);
+}
+
+.brass-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 1px;
+  background: var(--color-brass);
+}
+
+.brass-list em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-brass);
+}
+
+.col-quote {
+  align-self: center;
+  border-left: 1px solid var(--color-brass);
+  padding-left: 2.5rem;
+}
+
+.big-quote .display-italic {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--color-bone) 90%, transparent);
+}
+
+.big-quote .attribution {
+  display: block;
+  margin-top: 1.5rem;
+}
+
+/* ---------- Slide 14 — Rules ---------- */
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 2rem;
+  width: 100%;
+  border-top: 1px solid color-mix(in srgb, var(--color-bone) 12%, transparent);
+}
+
+.rule-card {
+  padding: 2rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border-right: 1px solid color-mix(in srgb, var(--color-bone) 10%, transparent);
+}
+
+.rule-card:last-child { border-right: 0; }
+
+.rule-n {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--color-brass);
+}
+
+.rule-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--color-bone);
+  margin: 0;
+}
+
+.rule-body {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--color-bone) 65%, transparent);
+  margin: 0;
+}
+
+/* ---------- Slide 15 — CTA ---------- */
+
+.cta {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* ---------- Deck UI overlay ---------- */
+
+.deck-counter {
+  position: fixed;
+  top: 1.75rem;
+  right: 2rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-bone) 55%, transparent);
+  z-index: 50;
+  pointer-events: none;
+  user-select: none;
+}
+
+.deck-counter-current { color: var(--color-bone); }
+.deck-counter-divider { color: color-mix(in srgb, var(--color-bone) 35%, transparent); }
+.deck-counter-total { color: color-mix(in srgb, var(--color-bone) 45%, transparent); }
+
+.deck-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: color-mix(in srgb, var(--color-bone) 8%, transparent);
+  z-index: 50;
+  pointer-events: none;
+}
+
+.deck-progress-bar {
+  height: 100%;
+  width: 100%;
+  background: var(--color-brass);
+  transform-origin: left center;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.deck-hint {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 2rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-bone) 35%, transparent);
+  z-index: 50;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---------- Smooth slide entry ---------- */
+
+@keyframes slide-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-grid > * {
+  animation: slide-rise 1000ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 200ms;
+}
+
+.slide-grid > *:nth-child(2) { animation-delay: 320ms; }
+.slide-grid > *:nth-child(3) { animation-delay: 440ms; }
+.slide-grid > *:nth-child(4) { animation-delay: 560ms; }
+.slide-grid > *:nth-child(5) { animation-delay: 680ms; }
+.slide-grid > *:nth-child(6) { animation-delay: 800ms; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .slide-grid.two-col,
+  .slide-grid.two-col-equal {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .col-image { height: 50vh; }
+  .vertical-rule { display: none; }
+  .step-flow { grid-template-columns: 1fr; gap: 1rem; }
+  .before-after { grid-template-columns: 1fr; gap: 1.25rem; }
+  .ba-arrow { transform: rotate(90deg); }
+  .rules-grid { grid-template-columns: 1fr; border-top: none; }
+  .rule-card { border-right: 0; border-top: 1px solid color-mix(in srgb, var(--color-bone) 10%, transparent); }
+  .cmd-row { grid-template-columns: 1fr; gap: 0.5rem; padding: 0.85rem 0; }
+  .dot-row { flex-direction: column; gap: 1.5rem; }
+}
