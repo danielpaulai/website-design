@@ -32,10 +32,9 @@ node --version
 
 ### 1.3 — Install Node.js (only if Step 1.2 failed)
 
-Open <https://nodejs.org> in your browser. Click the **LTS** button (recommended).
+Open <https://nodejs.org/en/download> in your browser. Switch the **for** dropdown to **Windows**, then click the green **Windows Installer (.msi)** button.
 
-> 📸 **SCREENSHOT** → `images/windows/02-nodejs-download.png`
-> *Node.js website with the LTS download button highlighted.*
+![Node.js download page showing Windows Installer button](images/windows/02-nodejs-download.png)
 
 Run the downloaded `.msi` installer. Click through (Next → I accept → Next → Install). Make sure the **"Automatically install necessary tools"** option is checked if it appears.
 
@@ -85,9 +84,6 @@ claude
 ```
 
 Your default browser opens automatically with an Anthropic login page. Sign in (or create an account if you don't have one).
-
-> 📸 **SCREENSHOT** → `images/windows/05-anthropic-login.png`
-> *Browser showing the Anthropic OAuth login screen.*
 
 After authorizing, the browser shows "You can return to Claude Code now." Switch back to PowerShell — Claude Code's prompt is waiting for input.
 
@@ -159,11 +155,11 @@ Press `Enter`. Claude responds with a list. **Both** `seedance-loop-prompt` and 
 
 ### 3.1 — Sign up
 
-Open <https://kie.ai>. Click **Sign Up** (top right).
+Open <https://kie.ai>. Click **Get Started** (top right).
 
-> 📸 **SCREENSHOT** → `images/windows/09-kie-signup.png`
+![KIE.AI homepage with Get Started button top right](images/windows/09-kie-signup.png)
 
-Use email or "Continue with Google" — both work.
+On the signup page, use email or "Continue with Google" — both work.
 
 ### 3.2 — Top up $5
 
@@ -182,9 +178,9 @@ A 10-second 1080p Seedance render costs a small fraction of $1 — $5 covers man
 
 We'll use GitHub during the session to store your project. **Just sign up — don't create a repository yet.**
 
-Open <https://github.com>. Click **Sign up** (top right).
+Open <https://github.com/signup>. Fill out the form.
 
-> 📸 **SCREENSHOT** → `images/windows/11-github-signup.png`
+![GitHub signup form with email, password, username, and country fields](images/windows/11-github-signup.png)
 
 Use your real email and pick a username you're happy with — it appears in your project URLs forever. Verify your email when GitHub sends the link.
 
@@ -194,13 +190,11 @@ Use your real email and pick a username you're happy with — it appears in your
 
 ## Step 5 / Create a Vercel account
 
-Open <https://vercel.com>. Click **Sign Up**.
+Open <https://vercel.com/signup>. On the plan-type screen, pick **I'm working on personal projects (Hobby)** and click **Continue**.
 
-Choose **Continue with GitHub** to link both accounts now (saves a step in the session).
+![Vercel signup screen with Hobby plan option](images/windows/12-vercel-signup.png)
 
-> 📸 **SCREENSHOT** → `images/windows/12-vercel-signup.png`
-
-Authorize Vercel when prompted. You'll land on the Vercel dashboard.
+On the next step, choose **Continue with GitHub** to link both accounts now (saves a step in the session). Authorize Vercel when prompted. You'll land on the Vercel dashboard.
 
 ✅ **Step 5 complete** when you can see your Vercel dashboard.
 
