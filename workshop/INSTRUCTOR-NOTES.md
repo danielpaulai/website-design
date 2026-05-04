@@ -6,21 +6,21 @@ For Daniel only. Not for students.
 
 ## Distribution decision (made)
 
-The Seedance and Frontend Design skills are now distributed directly from the GitHub repo at `github.com/danielpaulai/website-design`. Students install both with one paste in their terminal — see Step 2 of [INSTALL-GUIDE.md](INSTALL-GUIDE.md).
+The Seedance and Frontend Design skills are now distributed directly from the GitHub repo at `github.com/danielpaulai/website-design`. Students install both with one paste in their terminal — see Step 2 of [PRE-CLASS-ACTIVITY.md](PRE-CLASS-ACTIVITY.md).
 
-This means the only thing you need to share with attendees is the **INSTALL-GUIDE.md** itself (or a link to a published version of it — Notion, Google Doc, Vercel page, whatever you prefer).
+This means the only thing you need to share with attendees is the **PRE-CLASS-ACTIVITY.md** itself (or a link to a published version of it — Notion, Google Doc, Vercel page, whatever you prefer).
 
-The repo URL itself is not promoted in the install guide. Students get the curl commands, but not a "browse the repo" link or a tour of the workshop materials. Reveal the repo during the session.
+The repo URL itself is not promoted in the pre-class doc. Students get the curl commands, but not a "browse the repo" link or a tour of the workshop materials. Reveal the repo during the session.
 
 ---
 
-## Hosting the install guide for attendees
+## Hosting the pre-class activity for attendees
 
-You have a few options for distributing INSTALL-GUIDE.md to attendees as a "pre-class activity document":
+You have a few options for distributing PRE-CLASS-ACTIVITY.md to attendees:
 
 ### Option A — Notion (easiest, most familiar)
 
-1. Open Notion → New page → import the markdown from `workshop/INSTALL-GUIDE.md`
+1. Open Notion → New page → import the markdown from `workshop/PRE-CLASS-ACTIVITY.md`
 2. Click **Share** → **Share to web** → **Allow editing: off**
 3. Copy the link and send it to attendees
 
@@ -43,13 +43,13 @@ This option doubles as a teaser of what they're about to build.
 
 ### Option D — Direct file (lowest tech)
 
-Email or Slack the `INSTALL-GUIDE.md` file as an attachment. Works, but markdown rendering depends on whatever app the attendee opens it with.
+Email or Slack the `PRE-CLASS-ACTIVITY.md` file as an attachment. Works, but markdown rendering depends on whatever app the attendee opens it with.
 
 ---
 
 ## Pre-workshop checklist (do tonight)
 
-- [ ] Pick a distribution method above and publish the INSTALL-GUIDE.md
+- [ ] Pick a distribution method above and publish the PRE-CLASS-ACTIVITY.md
 - [ ] Send the link to attendees at least 2 hours before the session
 - [ ] Run the install steps yourself in a fresh terminal — catches any broken steps caused by repo updates
 - [ ] Confirm your own KIE.AI account has sufficient credit (you'll need to demo)
@@ -61,7 +61,7 @@ Email or Slack the `INSTALL-GUIDE.md` file as an attachment. Works, but markdown
 
 ## During the workshop
 
-- Open the session by having everyone hit the **Verify** checklist on page 4 of the install guide. Anyone who fails the checklist gets help in the first 10 minutes, not 40 minutes in.
+- Open the session by having everyone hit the **Verify** checklist near the bottom of the pre-class activity. Anyone who fails the checklist gets help in the first 10 minutes, not 40 minutes in.
 - Have a screenshare of YOUR working terminal so attendees can match what they see.
 - The two most common install failures from past Claude Code workshops:
   1. `npm: command not found` → push them to install Node.js LTS
@@ -73,5 +73,5 @@ Email or Slack the `INSTALL-GUIDE.md` file as an attachment. Works, but markdown
 ## After the workshop
 
 - Save attendees' actual generated prompts and rendered videos as case studies
-- Note which steps caused friction for the most people — fold fixes back into INSTALL-GUIDE.md for the next workshop
-- If the workshop went well, consider publishing the INSTALL-GUIDE.md publicly as a "How to install Claude Code skills" tutorial — it's a useful primer beyond this specific workshop
+- Note which steps caused friction for the most people — fold fixes back into PRE-CLASS-ACTIVITY.md for the next workshop
+- If the workshop went well, consider publishing the PRE-CLASS-ACTIVITY.md publicly as a "How to install Claude Code skills" tutorial — it's a useful primer beyond this specific workshop
