@@ -53,53 +53,323 @@ Story arc: open with a question, anchor in a story from Atomic Habits (the ice c
 
 ---
 
-## Outline for Gamma (paste-ready)
+## Outline for Gamma (paste-ready, rich)
+
+> **Format note for Gamma:** every slide block below contains four embedded directives — `LAYOUT`, `IMAGE`, `TYPE` (typography), and `MOOD`. Gamma's text-to-deck engine reads these as visual instructions. Paste the entire block below verbatim into Gamma's outline editor — don't strip the directives.
 
 ```
-1. Aura Build · Workshop
-Subtitle: From idea to live website. Tonight.
+GLOBAL VISUAL RULES (apply to every slide):
+- Canvas: pure ink black #0E0F11 — never pure black, never grey
+- Foreground type: bone white #F1ECE2 (not pure white)
+- Single accent: brushed brass #B8915E — used only for emphasis lines, accents, and highlights
+- Rare second accent: glass blue #4A6B8A — used at most twice in the deck (slides 3 and 14)
+- Display font: Fraunces, Light weight (300), italic for emphasis
+- Body font: Manrope, Regular (400) and Medium (500)
+- All-caps labels: Manrope Medium, letter-spacing +0.3em, 11pt, 60% opacity
+- No icons. No gradients. No drop shadows. No rounded corners above 6px. No emoji.
+- Hairline rules at 1px, 12% opacity, brass color, used as section markers
+- Photography style: cinematic editorial — ARRI Alexa or Leica look, Kodak Portra 400 grade, real depth of field, no AI-stock-photo gloss
+- Layout philosophy: asymmetric editorial grid, generous negative space (200-240px section padding), text and image rarely centered together
+- Aspect ratio: 16:9
+- Aesthetic anchor: Phaidon architecture monograph crossed with a film title sequence
 
-2. The question
-What if, in the next 90 minutes, you shipped a real website with an AI-generated cinematic video as the hero? Live URL. Real domain. Clients pay $5K–$15K for what we're about to build.
+---
 
-3. A story — the ice cube
-James Clear, Atomic Habits. An ice cube in a 25-degree room. You start heating it. 26, 27, 28, 29, 30, 31. Nothing changes. Then at 32 degrees the ice melts. Did one degree do all the work? No. Every degree was making a difference. We just couldn't see it.
+# Slide 1 — Title
 
-4. The insight
-You don't rise to your goals. You fall to your systems. Tonight is your 32-degree moment. The system you've been building melts into something visible.
+EYEBROW: AURA BUILD · WORKSHOP
 
-5. What we are building tonight
-Aura Build — architecture for the way a city remembers itself. A fictional Singapore architecture firm with a real working website, real video, real URL.
+## From idea to live website. Tonight.
 
-6. Why this matters now
-Three years ago: $50,000 and a team of twelve. Tonight: $5 of credits and 90 minutes. Architectural visualization plus web design plus deployment — the whole stack collapsed into prompts.
+LAYOUT: Two-thirds full-bleed cinematic image on the right. Left third is solid ink-black with the eyebrow + headline stacked top-aligned. Maximum negative space below the headline.
 
-7. The four-part system
-Idea to prompt with Claude Code. Prompt to video with KIE.AI. Video to website with Frontend Design skill. Website to live with GitHub and Vercel. Forty minutes of work. Ninety minutes of session. The rest is breathing room and fixing things together.
+IMAGE: Photorealistic cinematic still — a futuristic circular glass-and-steel stadium called AURELIA ARENA on Marina Bay Singapore at golden hour, brushed-steel signage glinting on the curved façade, surrounded by five 250-meter glass skyscrapers, deep teal water in the foreground, warm amber sky, jet contrail high overhead. Shot on ARRI Alexa, Kodak Portra 400 grade, 35mm equivalent T2.8, shallow depth of field, motivated golden-hour rake light from camera-east. No people visible. No overlays.
 
-8. Live preview
-Watch this for ten seconds. Aurelia Arena, a fictional Singapore stadium. Blueprint to real building. This is what you will be making.
+TYPE: Eyebrow in Manrope Medium all-caps, +0.4em tracking, 11pt, 60% opacity bone-white. Headline in Fraunces Light Italic, 64pt, bone-white #F1ECE2, hung from the top with a 1px brass-color rule above it.
 
-9. Step 1 — Idea to prompt
-You give Claude Code a vague three-sentence vision. The Seedance skill returns a 200-word cinematographer-grade prompt with specific lens millimeters, film stocks, and loop topology. You don't need to know what anamorphic flare means. The skill knows.
+MOOD: Quiet confidence. Cinematic restraint. Closer to a film title card than a SaaS launch slide.
 
-10. Step 2 — Prompt to video
-Paste prompt into KIE.AI. About thirty cents per render. About ninety seconds wait. You get a 1080p cinema-grade clip. Same render commercially: five thousand dollars.
+---
 
-11. Step 3 — Video to website
-Claude Code plus Anthropic's Frontend Design skill builds the site. Hero is your video, looping, no overlay. Five sections of editorial copy. Real responsive Next.js with TypeScript and Tailwind. Not a Squarespace template — a Phaidon-grade single-page object.
+# Slide 2 — The question
 
-12. Step 4 — Site to live
-Push to GitHub. Deploy to Vercel. Three CLI commands. Ninety seconds. You have a URL ending in vercel.app. Buy a real domain in thirty seconds and point it. Now you have your-name.com.
+EYEBROW: 01 / THE QUESTION
 
-13. What you walk away with
-A live URL on the public internet. Your own AI-rendered cinematic video. A skill ninety-nine percent of agencies cannot yet do. The identity of someone who ships. Proof you can text your mother. Atomic Habits says every action is a vote for the person you want to become. Tonight you are casting a big one.
+## What if, in the next 90 minutes, you shipped a real website with an AI-generated cinematic video as its hero?
 
-14. The room rules
-Lean in. When something works, name it. When you are stuck, ask immediately. We move at the speed of the room. No silent confusion — raise a hand the moment you are lost. Steal everything — code, prompts, copy, screenshots. We are not student and teacher tonight. We are a small studio building together.
+Live URL. Real domain. The kind of work agencies are charging $5,000 to $15,000 for right now.
 
-15. Let's go
-The ice melts at thirty-two degrees. Open Claude Code. We start now.
+LAYOUT: Centered hero text on the upper two-thirds of the slide. Lower third holds a thin two-column comparison strip — left column shows BEFORE (a defeated person hunched over scattered notes), right column shows AFTER (the same desk now showing a glowing browser with a published site). Hairline brass divider between the columns.
+
+IMAGE: Editorial split-frame photograph. Left half desaturated, cool 4500K, person at a wooden desk surrounded by handwritten notes, soft window light, slightly defeated posture, head down. Right half full color and warm 3200K, same desk, person now leaning back as a glowing 27-inch monitor displays a published architecture-firm website, brushed brass keyboard glow on their hands. Both halves shot on Leica, Kodak Portra grade.
+
+TYPE: Headline in Fraunces Light Italic, 48pt, 90% opacity. Subhead in Manrope Regular, 18pt, 70% opacity. The phrase "$5,000 to $15,000" highlighted in brass.
+
+MOOD: Setup of stakes. The "what if" should feel earnest, not salesy. This is the moment they decide to lean in.
+
+---
+
+# Slide 3 — A story · The ice cube
+
+EYEBROW: 02 / A STORY
+
+## An ice cube in a cold room.
+
+> Imagine an ice cube on a table. The room is 25°F. You start heating: 26… 27… 28… 29… 30… 31. Nothing visible changes. Then at 32° the ice melts. Did one degree do all the work? No. Every degree was working. We just couldn't see it.
+>
+> *— James Clear, Atomic Habits*
+
+LAYOUT: Full-bleed cinematic macro image as background, with a dark gradient overlay (60% opacity at top fading to 90% at bottom) so type stays readable. Quote block left-aligned in the lower-left third. Hairline glass-blue (#4A6B8A) rule under the quote.
+
+IMAGE: Macro photograph of a single ice cube on a black slate surface, beginning to melt, one suspended water droplet caught mid-fall, single side light at 4500K from camera-left creating a hard rim along the cube's edge, deep shadow on camera-right side, dust motes drifting in the light, ARRI Alexa, T1.4 ultra-shallow depth of field. The droplet is the focal point. Background fades to deep black.
+
+TYPE: Headline "AN ICE CUBE IN A COLD ROOM." in Fraunces Light all-caps, 36pt, +0.1em tracking. Quote body in Fraunces Light Italic, 22pt, 1.5 line-height. Attribution in Manrope Regular, 14pt, 60% opacity. Numbers (26, 27, 28, 29, 30, 31, 32) lift visually as Fraunces Light, slightly larger.
+
+MOOD: Slow down here. The slide should breathe. Cinematic patience.
+
+---
+
+# Slide 4 — The insight
+
+EYEBROW: 03 / THE INSIGHT
+
+## You don't rise to your goals. You fall to your systems.
+
+Tonight is your 32-degree moment. The system you've been quietly building finally becomes visible.
+
+LAYOUT: Centered composition. Big quote occupies the upper half. Below it, a single hairline rule in brass, 240px wide. Beneath the rule, the subhead in body sans, 60% opacity. Symmetric vertical rhythm — the slide should feel like a poster.
+
+IMAGE: Macro of an antique brushed-brass thermometer on a dark wood surface, mercury rising past the 32°F mark, condensation droplets along the glass tube, warm side light from a candle out of frame, shallow DOF, Leica Q look. The 32° marker tick is the focal point and is sharply lit; surrounding numerals fall out of focus.
+
+TYPE: Quote in Fraunces Light Italic, 56pt, bone-white. Subhead in Manrope Regular, 18pt, 70% opacity, max-width 60ch. The phrase "32-degree moment" italicized.
+
+MOOD: This is the punch after the story. Hold it for 4 seconds before moving on.
+
+---
+
+# Slide 5 — What we're building tonight
+
+EYEBROW: 04 / WHAT WE'RE BUILDING
+
+## AURA BUILD
+
+*Architecture for the way a city remembers itself.*
+
+LAYOUT: Full-bleed image fills the entire slide. Dark gradient (75% opacity ink-black) only on the lower third, behind the wordmark and tagline. Wordmark "AURA BUILD" sits bottom-left, tagline directly below it. The Aurelia Arena hero photo is the slide.
+
+IMAGE: Aerial drone photograph at 120m altitude, golden-hour late-afternoon, of Aurelia Arena — a 70,000-seat oval glass-and-steel circular stadium with a translucent white PTFE-fabric tensile roof and granite-clad podium, surrounded by five 250m glass skyscrapers in a semi-circle, real Marina Bay water in the foreground, real Singapore CBD skyline behind, brushed-stainless-steel "AURELIA ARENA" letters on the curved exterior facade catching direct sun. ARRI Alexa, Zeiss Supreme 35mm, T2.8, Kodak Vision3 250D grade, real spherical lens flare passing through the gap between two towers.
+
+TYPE: "AURA BUILD" in Fraunces Light, 28pt, +0.4em tracking, all-caps, bone-white. Tagline in Fraunces Light Italic, 18pt, 80% opacity, directly below.
+
+MOOD: This is the visual reveal moment. Big. Cinematic. Confident. No supporting text — let the image carry it.
+
+---
+
+# Slide 6 — Why this matters now
+
+EYEBROW: 05 / WHY NOW
+
+## $50,000 → $5
+
+## 12 people → you, alone.
+
+LAYOUT: Editorial two-column. Left column desaturated greyscale with the label "THREE YEARS AGO" small at top, then the big "$50,000" beneath, then a small body line about what the cost covered. Right column in full color and warm tones with "TONIGHT" small at top, big "$5" beneath, body line below. Both columns share a hairline brass divider down the middle.
+
+IMAGE: Editorial split-frame photograph. Left half: a 1990s-style film crew on a movie set with a large crane camera, dolly tracks, 12kW HMI lights, multiple crew members, desaturated cool monochrome. Right half: a single open MacBook Pro on a warm wooden desk with a small notebook beside it, soft window light, full color amber, completely empty otherwise. Both halves shot on Leica.
+
+TYPE: "$50,000" in Fraunces Light, 96pt, 80% opacity. "$5" in Fraunces Light, 96pt, brass color. Eyebrows in Manrope Medium tracked-out caps. Body lines in Manrope Regular, 14pt, 60% opacity.
+
+MOOD: This is the slide that makes them sit up. The number contrast is the entire visual argument.
+
+---
+
+# Slide 7 — The four-part system
+
+EYEBROW: 06 / THE SYSTEM
+
+## Idea → Prompt → Video → Site
+
+Four moves. Three tools. Forty minutes of work.
+
+LAYOUT: Horizontal four-stage flow diagram across the middle of the slide. Each stage is a thin rectangular card with a hairline brass border. Cards connected by short horizontal arrows (also brass, 1px). Each card contains: a numeral (01–04) in light serif at top, the stage name in display sans below, the tool name in body sans, and the time estimate.
+
+IMAGE: Optional background — a faint blueprint texture on dark canvas, almost invisible (5% opacity overlay), suggesting architectural drafting. No photo.
+
+CARDS:
+- 01 — Idea → Prompt — Claude Code + Seedance skill — 5 min
+- 02 — Prompt → Video — KIE.AI — 90 sec render
+- 03 — Video → Site — Claude Code + Frontend Design skill — 30 min
+- 04 — Site → Live — GitHub + Vercel — 3 min
+
+TYPE: Numerals in Fraunces Light, 36pt. Stage names in Manrope Medium, 14pt, all-caps, +0.2em tracking. Tools and times in Manrope Regular, 12pt, 70% opacity.
+
+MOOD: The plan revealed. Should feel orderly and inevitable, like an itinerary in a luxury travel magazine.
+
+---
+
+# Slide 8 — Live preview
+
+EYEBROW: 07 / LIVE PREVIEW
+
+*Watch this for 10 seconds.*
+
+LAYOUT: Full-bleed video playback fills the entire slide. The 10-second AURELIA ARENA build-up loop plays muted on autoplay. No text overlays during playback. After the loop completes once, a small caption appears bottom-left: "AURELIA ARENA · Marina Bay, Singapore · 2026 · Generated with Seedance 2."
+
+IMAGE / VIDEO: Embed `aurelia-arena.mp4` from the GitHub repo (workshop/web/public/aurelia-arena.mp4). Playback should loop, muted, autoplay. If Gamma cannot embed video on a slide, use a single still frame from the 8.5-second mark of the video showing the completed building at golden hour with the AURELIA ARENA signage clearly visible.
+
+TYPE: Caption in Manrope Regular, 11pt, +0.2em tracking, 60% opacity bone-white, lower-left, only after the loop ends.
+
+MOOD: Zero distractions. The video is the slide. Speaker stays silent for the full 10 seconds.
+
+---
+
+# Slide 9 — Step 1 / Idea → Prompt
+
+EYEBROW: 08 / STEP 01 — IDEA TO PROMPT
+
+## You bring the vision. The skill brings the brief.
+
+LAYOUT: Two-column comparison. Left column labeled "BEFORE" in tracked-out caps, contains a short three-line vague brief in handwritten-style serif, max 80 words. Right column labeled "AFTER" in tracked-out caps, contains a dense block of cinematographer-grade prompt copy in mono-feeling serif, ~200 words. A long brass arrow points horizontally from left to right between them.
+
+IMAGE: A subtle background texture — close-up macro of a vintage typewriter ribbon or an unfinished architectural sketch in graphite, at 8% opacity, behind both columns. Otherwise no image.
+
+ON-SLIDE COPY:
+- BEFORE (left): "6-second loop, watch deconstructing on black stone, luxury cinema feel."
+- AFTER (right): "Luxury cinema, 6-second masked-transition seamless loop of a Swiss mechanical watch on matte black volcanic stone, exploded-view deconstruction in zero gravity revealing escapement, balance wheel, mainspring, ruby jewels — 100mm macro lens at T2.0, slow 8-second-per-revolution orbit, 24fps with 180° shutter, hard rim key from camera-back-right at 4300K, graded as Kodak Vision3 250D, palette graphite #0F1014, polished platinum #C8C9CB, warm brass #B8915E…"
+
+TYPE: Column labels in Manrope Medium tracked-out caps. BEFORE copy in Fraunces Italic, 18pt. AFTER copy in Söhne Mono / IBM Plex Mono / any mono substitute, 11pt, 1.6 line-height, fitting a clear 200-word block.
+
+MOOD: The "wow" of seeing what 12 blocks of structure does to a vague idea. Visual contrast between vague and dense is the argument.
+
+---
+
+# Slide 10 — Step 2 / Prompt → Video
+
+EYEBROW: 09 / STEP 02 — PROMPT TO VIDEO
+
+## $0.30 per render. 90 seconds wait. 1080p cinema-grade output.
+
+LAYOUT: Symmetric two-panel composition. Left panel is a clean abstract dashboard mockup (vertical rectangle) showing a render queue with "STATUS: COMPLETE", "DURATION: 1m 32s", "COST: $0.30" — typeset, not screenshotted. Right panel is a single rendered video frame (vertical or square) of the AURELIA ARENA stadium at golden hour. Brass arrow connects them.
+
+ABOVE THE TWO PANELS: a single stat callout — the literal phrase "$0.30 per render" displayed huge in Fraunces Light, dominating the upper third of the slide.
+
+IMAGE: For the right panel, use a still frame from the AURELIA ARENA video. For the left panel, generate a stylized minimalist dashboard mockup — dark background, monospace stats listing, no actual screenshot of KIE.AI's UI. Do not include the KIE.AI logo.
+
+TYPE: "$0.30" giant in Fraunces Light, 144pt, brass color. Subhead in Fraunces Light, 28pt, italic. Dashboard mockup in monospace at 14pt.
+
+MOOD: The cost is the punch. The number should feel almost absurd against what the same render used to cost.
+
+---
+
+# Slide 11 — Step 3 / Video → Site
+
+EYEBROW: 10 / STEP 03 — VIDEO TO SITE
+
+## Not a Squarespace template. A Phaidon book in browser form.
+
+LAYOUT: Editorial wireframe sketch dominates the slide — a hand-drawn-style architectural wireframe of the AURA BUILD single-page site, showing the stacked sections (HERO, MANIFESTO, WHAT WE BUILD, SELECTED WORK, BY THE NUMBERS, STUDIO, FOOTER) as labeled rectangles. Each section labeled in tiny tracked-out caps in the margin.
+
+IMAGE: Generate a top-down architect's-desk composition: a roll of trace paper with hand-drawn website wireframe sections on it in graphite, a brass mechanical pencil, a small ruler, a coffee cup half out of frame. Warm side light. The wireframe drawing itself is the focal point.
+
+ON-SLIDE COPY: short bullet list to the right of (or below) the wireframe:
+- Hero — looping video, no overlay
+- Manifesto — single editorial line
+- What We Build — 4 disciplines
+- Selected Work — 4 project cards
+- By the Numbers — 8 / 47 / $4.2B / 12
+- Studio — 2 paragraphs, no team grid
+- Footer — wordmark + 3 columns
+
+TYPE: Headline in Fraunces Light Italic, 32pt. Section labels in Manrope Medium, 11pt, +0.3em tracking, 60% opacity.
+
+MOOD: The wireframe should feel like a real architect's working drawing. Imperfect lines. Confident.
+
+---
+
+# Slide 12 — Step 4 / Site → Live
+
+EYEBROW: 11 / STEP 04 — SITE TO LIVE
+
+## Three commands. 90 seconds. A URL.
+
+LAYOUT: Three vertical command cards stacked in the center of the slide. Each card has a small numeral (1, 2, 3) at top-left, the command in monospace, and a short caption below. A brass arrow descends from card 3 to a small glowing globe icon at the very bottom.
+
+IMAGE: Subtle background — a minimal globe wireframe in 1px brass at very low opacity (8%), centered, very large, falling off the slide edges. The cards float over it.
+
+CARDS:
+- 1 — `git push` — your work goes to GitHub
+- 2 — `vercel deploy --prod` — Vercel builds it
+- 3 — `your-name.vercel.app` — your work is live on the public internet
+
+BELOW: "Buy a real domain in 30 seconds. Point it. Now you have your-name.com."
+
+TYPE: Commands in monospace at 18pt. Captions in Manrope Regular, 13pt, 70% opacity. Bottom line in Fraunces Italic, 18pt, brass color.
+
+MOOD: Minimal, mechanical, satisfying. The slide should feel like the closing chapter of a heist movie — the plan worked.
+
+---
+
+# Slide 13 — What you walk away with
+
+EYEBROW: 12 / WHAT YOU WALK AWAY WITH
+
+## By 9pm tonight you will have:
+
+- A live URL on the public internet
+- Your own AI-rendered cinematic video
+- A skill 99% of agencies can't yet do
+- The identity of someone who **ships**
+- Proof you can text your mother
+
+> *Every action is a vote for the type of person you wish to become.*
+> *— James Clear*
+
+LAYOUT: Bullet list occupies the left two-thirds. Each bullet uses a hairline brass dot rather than a default circle. Right third holds the pull-quote in Fraunces Light Italic, set vertically against a hairline brass rule on the left edge of the column.
+
+IMAGE: A subtle background image — out-of-focus laptop screen reflecting a silhouetted face, brass keyboard backlight glow, dark cinematic background, deep shallow DOF. The face is unreadable; the screen glow is the focal point. 25% opacity overlay so type stays dominant.
+
+TYPE: Bullet text in Manrope Regular, 18pt. The word "ships" in italic Fraunces. Pull-quote in Fraunces Light Italic, 22pt. Attribution in Manrope Regular, 12pt, 60% opacity.
+
+MOOD: This is the emotional close. Slow speaker delivery. The Atomic Habits quote should feel earned, not glued on.
+
+---
+
+# Slide 14 — The room rules
+
+EYEBROW: 13 / THE ROOM RULES
+
+## Three things tonight.
+
+LAYOUT: Three equal-width vertical cards in a row. Each card has a small numeral (01, 02, 03) at top in light serif, a two-word rule in display sans, and a short body explanation below. Hairline brass dividers between cards.
+
+IMAGE: No image. The slide is type-driven. A subtle deep-blue (#4A6B8A) horizontal rule across the bottom, 240px wide, centered.
+
+CARDS:
+- 01 — LEAN IN. When something works, name it. When you're stuck, ask immediately. We move at the speed of the room.
+- 02 — NO SILENT CONFUSION. If you're lost, raise a hand. I would rather rewind than have you ghost the second half.
+- 03 — STEAL EVERYTHING. Code, prompts, copy, screenshots. We are not student and teacher tonight — we are a small studio building together.
+
+TYPE: Numerals in Fraunces Light, 28pt. Rule names in Manrope Medium tracked-out caps, 14pt, +0.3em tracking. Body in Manrope Regular, 13pt, 75% opacity, 1.6 line-height.
+
+MOOD: Brisk. Don't dwell. This is the transition from monologue to working session.
+
+---
+
+# Slide 15 — Let's go
+
+EYEBROW: (none)
+
+## *The ice melts at 32°.*
+
+## Open Claude Code. We start now.
+
+LAYOUT: Centered. Maximum negative space. Headline 1 (italic) at the visual top-third. Headline 2 (sans) below it, smaller, with a brass color treatment.
+
+IMAGE: Single suspended water droplet from a melting ice cube, caught mid-fall against a deep black background, brass-lit from behind creating a warm rim along the droplet, macro detail, ARRI Alexa, T1.4 ultra-shallow DOF. Just the droplet. Nothing else. The whole slide breathes.
+
+TYPE: First headline in Fraunces Light Italic, 56pt, bone-white. Second headline in Manrope Medium tracked-out caps, 22pt, +0.2em tracking, brushed brass color #B8915E.
+
+MOOD: Stillness, then ignition. The single image and minimal text should give the room one quiet second of focus before the speaker says "open Claude Code" and turns to their own screen.
 ```
 
 ---
